@@ -1,0 +1,12 @@
+﻿@model Position
+<body>
+    <h1>Position Details</h1>
+    <hr />
+    <h3>Position Name: @Model.Name</h3>
+    <hr />
+    <h4>Players Who Play This Position</h4>
+    @foreach (var player in Model.Players)
+    {
+        <p>@player.Player.Name</p>
+    }
+</body>

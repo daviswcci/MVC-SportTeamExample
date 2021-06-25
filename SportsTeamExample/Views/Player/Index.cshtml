@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Player>
+
+<h2>Player List</h2>
+
+@foreach (var player in Model)
+{
+<p>
+    @player.Name - <button onclick="location.href='/Player/Update/@player.Id'">Edit</button><button onclick="location.href='/Player/Delete/@player.Id'">Delete</button>
+</p>
+<ul>
+    <li>
+        Plays for the @player.Team.City @player.Team.Name
+    </li>
+    <li>
+        Positions:
+    </li>
+    <ul>
+
+        @foreach (var position in player.Positions)
+        {
+
+            <li>
+                <a href="/Position/Details/@position.PositionId">
+                    @position.Position.Name
+                </a>
+            </li>
+        }
+    </ul>
+</ul>
+}
+<a href="/Team/Create/">Add New Team</a> -
+<a href="/Player/Create/">Add New Player</a> -
+<a href="/PlayerPosition/Create/">Assign A Player A Position</a>
+
