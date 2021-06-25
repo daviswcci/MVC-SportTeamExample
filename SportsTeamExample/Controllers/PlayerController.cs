@@ -90,7 +90,7 @@ namespace SportsTeamExample.Controllers
             db.Players.Update(model);
             db.SaveChanges();
             ViewBag.TeamId = new SelectList(db.Teams.ToList(), "Id", "Name");
-            ViewBag.ResultMessage = model.Name + "was successfully updated.";
+            ViewBag.ResultMessage = model.Name + " was successfully updated.";
             return View(model);
         }
     }
